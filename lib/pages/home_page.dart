@@ -28,7 +28,11 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement build
     return Scaffold(
         body: Stack(
-      children: <Widget>[_featuresGAmeWidget(), _gradientBoxWidget()],
+      children: <Widget>[
+        _featuresGAmeWidget(),
+        _gradientBoxWidget(),
+        _topLayerWidget()
+      ],
     ));
   }
 
@@ -59,13 +63,43 @@ class _HomePageState extends State<HomePage> {
               gradient: LinearGradient(colors: [
             Color.fromRGBO(35, 45, 59, 1.0),
             Colors.transparent,
-          ], 
-          stops: [
+          ], stops: [
             0.65,
             1.0
-          ],
-          begin: Alignment.bottomCenter, 
-          end: Alignment.topCenter)),
+          ], begin: Alignment.bottomCenter, end: Alignment.topCenter)),
         ));
+  }
+
+  Widget _topLayerWidget() {
+    return Padding(padding: EdgeInsets.symmetric(horizontal: _deviceWidth * 0.05, vertical: _deviceHeight * 0.005), 
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[_topBarWidgtet()],
+    ),);
+  }
+
+  Widget _topBarWidgtet() {
+    return SizedBox(
+      height: _deviceHeight * 0.13,
+      width: _deviceWidth,
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const Icon(Icons.menu, color: Colors.white, size: 30),
+            Row(
+              children: <Widget>[
+                const Icon(Icons.search, color: Colors.white, size: 30),
+                SizedBox(
+                  width: _deviceWidth * 0.03,
+                ),
+                const Icon(Icons.notifications, color: Colors.white, size: 30)
+              ],
+            )
+          ]),
+    );
   }
 }
