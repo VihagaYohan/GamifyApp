@@ -36,10 +36,16 @@ class _HomePageState extends State<HomePage> {
     return SizedBox(
         height: _deviceHeight * 0.5,
         width: _deviceWidth,
-        child: Container(
-            decoration: BoxDecoration(
+        child: PageView(
+          children: featuredGames.map((_game) {
+            return Container(
+                decoration: BoxDecoration(
                 image: DecorationImage(
-          image: NetworkImage(featuredGames[0].coverImage.url),
-        ))));
+                  fit: BoxFit.cover,
+                  image: NetworkImage(_game.coverImage.url),
+              ),
+            ));
+          }).toList(),
+        ));
   }
 }
