@@ -48,8 +48,7 @@ class ScrollableGamesWidget extends StatelessWidget {
             maxLines: 2,
             style: TextStyle(
               color: Colors.white, 
-              fontSize: _height * 0.05, 
-              fontStyle: FontStyle.italic
+              fontSize: _height * 0.06
               ))]
           )
          ); 

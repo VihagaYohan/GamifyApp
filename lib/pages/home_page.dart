@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
         SizedBox(height: _deviceHeight * 0.13),
         _featuredGamesInfoWidget(),
         Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01), 
-        child: ScrollableGamesWidget(_deviceHeight * .30, _deviceWidth, true, games))],
+        child: ScrollableGamesWidget(_deviceHeight * .30, _deviceWidth, true, games)),],
       ),
     );
   }
