@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data.dart';
+import './widgets/scrollable_games_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -86,7 +87,9 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[_topBarWidgtet(), 
         SizedBox(height: _deviceHeight * 0.13),
-        _featuredGamesInfoWidget()],
+        _featuredGamesInfoWidget(),
+        Padding(padding: EdgeInsets.symmetric(vertical: _deviceHeight * 0.01), 
+        child: ScrollableGamesWidget(_deviceHeight * .30, _deviceWidth, true, games))],
       ),
     );
   }
